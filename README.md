@@ -16,16 +16,29 @@ filepath = 'path/to/errors1.txt'  # or 'path/to/errors5.txt'
 with open(filepath, 'r') as file:
     reports = [ast.literal_eval(line.strip()) for line in file]
 
+```
+
 ## Dictionary Structure
 
 Each dictionary in the dataset contains the following keys:
 
 - **Transmitted Word**: The word as it appears in the transmitted text.
-- **Word Index in Text**: The index of the word in the array text.split().
+- **Word Index in Text**: The index of the word in the array `text.split()`.
 - **Model-Suggested Alternative**: The alternative word suggested by the model.
-- **Label**: The domain expert's label indicating whether the flag is a "GOOD FLAG." (a genuine error) or a false positive.
+- **Label**: The domain expert's label indicating the nature of the candidate error.
 - **Notes**: Additional notes from the domain expert, providing context or further details about the flag.
 - **Text**: A snippet of the surrounding text where the transmitted word is found.
+
+### Labels
+
+The **Label** key can have one of the following values:
+
+- **GOOD FLAG.**: This indicates that the domain expert has identified a genuine error in the transmitted text.
+- **BAD.**: This indicates that the flagged word is not a genuine error.
+- **PLAUSIBLE FLAG.**: This indicates that the flag seems legitimate, but further work is needed to be sure.
+- **UNCERTAIN.**: This indicates that further work is needed to determine if the flag is a genuine error.
+- **BAD DATA.**: This indicates that the error resulted from issues in the authors' data assembling, cleaning, or standardization.
+- **EDITORIAL.**: This indicates that the flagged issue is not a problem with the text, but a situation where different editorial decisions (such as punctuation or spacing) can be valid.
 
 
 
