@@ -33,12 +33,12 @@ Each dictionary in the dataset contains the following keys:
 
 The **Label** key can have one of the following values:
 
-- **GOOD FLAG.**: This indicates that the domain expert has identified a genuine error in the transmitted text.
-- **BAD.**: This indicates that the flagged word is not a genuine error.
-- **PLAUSIBLE FLAG.**: This indicates that the flag seems legitimate, but further work is needed to be sure.
-- **UNCERTAIN.**: This indicates that further work is needed to determine if the flag is a genuine error.
-- **BAD DATA.**: This indicates that the error resulted from issues in the authors' data assembling, cleaning, or standardization.
-- **EDITORIAL.**: This indicates that the flagged issue is not a problem with the text, but a situation where different editorial decisions (such as punctuation or spacing) can be valid.
+- **GOOD FLAG.** This indicates that the domain expert has identified a genuine error in the transmitted text.
+- **BAD.** This indicates that the flagged word is not a genuine error.
+- **PLAUSIBLE FLAG.** This indicates that the flag seems legitimate, but further work is needed to be sure.
+- **UNCERTAIN.** This indicates that further work is needed to determine if the flag is a genuine error.
+- **BAD DATA.** This indicates that the error resulted from issues in the authors' data assembling, cleaning, or standardization.
+- **EDITORIAL.** This indicates that the flagged issue is not a problem with the text, but a situation where different editorial decisions (such as punctuation or spacing) can be valid.
 
 
 
