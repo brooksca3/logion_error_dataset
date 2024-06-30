@@ -17,6 +17,7 @@ with open(filepath, 'r') as file:
     reports = [ast.literal_eval(line.strip()) for line in file]
 
 ```
+We additionally include the file `true_negatives.txt` which contains the words randomly selected from the non-flags and are presumed to be non-erroneous. We include these examples in our evaluation to mitigate the distribution shift incurred by our approach for oversampling true errors. 
 
 ## Dictionary Structure
 
