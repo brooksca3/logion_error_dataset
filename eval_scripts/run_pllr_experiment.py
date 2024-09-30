@@ -1,5 +1,6 @@
 import ast
 import torch
+import json
 from transformers import BertTokenizer, BertForMaskedLM
 from pllr_utils import calculate_PLLR
 from sklearn.metrics import roc_auc_score as roc
@@ -13,12 +14,12 @@ model = BertForMaskedLM.from_pretrained('YOUR PATH HERE').to(device)
 
 model.eval()
 
-with open('dataset_files/errors1.txt', 'r') as file:
-    combined_reports1 = [ast.literal_eval(line.strip()) for line in file]
-with open('dataset_files/errors5.txt', 'r') as file:
-    combined_reports5 = [ast.literal_eval(line.strip()) for line in file]
-with open('dataset_files/true_negatives.txt', 'r') as file:
-    true_negatives = [ast.literal_eval(line.strip()) for line in file]
+with open('dataset_files/errors_split_1.json', 'r') as file:
+    combined_reports1 = json.load(file)
+with open('dataset_files/errors_split_5.json', 'r') as file:
+    combined_reports5 = json.load(file)
+with open('dataset_files/random_assumed_true_negatives.json', 'r') as file:
+    true_negatives = json.load(file)
 
 labels = []
 ccrs = []

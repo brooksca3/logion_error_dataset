@@ -1,10 +1,9 @@
 from ccr_utils import get_ccr_for_word
 import ast
+import json
 import torch
 from transformers import BertTokenizer, BertForMaskedLM
 from sklearn.metrics import roc_auc_score as roc
-
-print('logion 15 new')
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -13,12 +12,12 @@ model = BertForMaskedLM.from_pretrained('YOUR PATH HERE').to(device)
 
 model.eval()
 
-with open('dataset_files/errors1.txt', 'r') as file:
-    combined_reports1 = [ast.literal_eval(line.strip()) for line in file]
-with open('dataset_files/errors5.txt', 'r') as file:
-    combined_reports5 = [ast.literal_eval(line.strip()) for line in file]
-with open('dataset_files/true_negatives.txt', 'r') as file:
-    true_negatives = [ast.literal_eval(line.strip()) for line in file]
+with open('dataset_files/errors1.json', 'r') as file:
+    combined_reports1 = json.load(file)
+with open('dataset_files/errors5.json', 'r') as file:
+    combined_reports5 = json.load(file)
+with open('dataset_files/true_negatives.json', 'r') as file:
+    true_negatives = json.load(file)
 
 labels = []
 ccrs = []
