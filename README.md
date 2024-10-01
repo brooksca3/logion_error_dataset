@@ -9,13 +9,12 @@ The `dataset_files` directory contains two annotated files: `errors_split_1.json
 To load the data from these files, you can do the following:
 
 ```python
-import ast
+import json
 
 filepath = 'path/to/errors1.txt'  # or 'path/to/errors5.txt'
 
-with open(filepath, 'r') as file:
-    reports = [ast.literal_eval(line.strip()) for line in file]
-
+with open('path/to/errors_split_1.json', 'r') as file:
+    combined_reports1 = json.load(file)
 ```
 We additionally include the file `true_negatives.txt` which contains the words randomly selected from the non-flags and are presumed to be non-erroneous. We include these examples in our evaluation to mitigate the distribution shift incurred by our approach for oversampling true errors. 
 
