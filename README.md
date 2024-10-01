@@ -1,10 +1,10 @@
-# An Annotated Dataset of 1,000 Candidate Errors in Premodern Greek
+# An Annotated Dataset of Errors in Premodern Greek and Baselines for Detecting Them
 
-This repository contains the data and code used for the paper "An Annotated Dataset of 1,000 Candidate Errors in Premodern Greek and Baselines for Detecting Them." The dataset and baselines provided here are designed to accelerate the discovery of real errors in premodern texts using machine learning methods.
+This repository contains the data and code used for the paper "An Annotated Dataset of Errors in Premodern Greek and Baselines for Detecting Them". The dataset and baselines provided here are designed to accelerate the discovery of real errors in premodern texts using machine learning methods.
 
 ## Dataset Files
 
-The `dataset_files` directory contains two annotated files: `errors1.txt` and `errors5.txt`. We randomly split the works of Michael Psellos into five parts, and the annotations provided here correspond to parts 1 and 5, with the remaining parts currently in progress. Each of these files contains 500 line-separated dictionaries.
+The `dataset_files` directory contains two annotated files: `errors_split_1.json` and `errors_split_5.json`. We randomly split the works of Michael Psellos into five parts, and the annotations provided here correspond to parts 1 and 5, with the remaining parts currently in progress. Each of these files contains 500 line-separated dictionaries.
 
 To load the data from these files, you can do the following:
 
