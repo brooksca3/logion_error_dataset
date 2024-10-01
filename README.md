@@ -11,7 +11,7 @@ To load the data from these files, you can do the following:
 ```python
 import json
 
-filepath = 'path/to/errors1.txt'  # or 'path/to/errors5.txt'
+filepath = 'path/to/errors_split_1.txt'  # or 'path/to/errors5.txt'
 
 with open('path/to/errors_split_1.json', 'r') as file:
     combined_reports1 = json.load(file)
