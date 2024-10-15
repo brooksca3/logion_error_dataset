@@ -16,7 +16,7 @@ filepath = 'path/to/errors_split_1.txt'  # or 'path/to/errors_split_5.txt'
 with open('path/to/errors_split_1.json', 'r') as file:
     combined_reports1 = json.load(file)
 ```
-We additionally include the file `true_negatives.txt` which contains the words randomly selected from the non-flags and are presumed to be non-erroneous. We include these examples in our evaluation to mitigate the distribution shift incurred by our approach for oversampling true errors. 
+We additionally include the file `random_assumed_true_negatives.json` which contains the words randomly selected from the non-flags and are presumed to be non-erroneous. We include these examples in our evaluation to mitigate the distribution shift incurred by our approach for oversampling true errors. 
 
 ## Dictionary Structure
 
