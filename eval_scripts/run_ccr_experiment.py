@@ -8,8 +8,8 @@ from sklearn.metrics import roc_auc_score as roc
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
-tokenizer = BertTokenizer.from_pretrained('cabrooks/LOGION-50k_wordpiece')
-model = BertForMaskedLM.from_pretrained('cabrooks/LOGION-50k_wordpiece').to(device)
+tokenizer = BertTokenizer.from_pretrained('YOUR PATH HERE')
+model = BertForMaskedLM.from_pretrained('YOUR PATH HERE').to(device)
 
 model.eval()
 
