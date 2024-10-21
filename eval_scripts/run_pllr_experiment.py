@@ -2,7 +2,7 @@ import ast
 import torch
 import json
 from transformers import BertTokenizer, BertForMaskedLM
-from pllr_utils import calculate_PLLR
+from utils.pllr_utils import calculate_PLLR
 from sklearn.metrics import roc_auc_score as roc
 
 
@@ -14,11 +14,11 @@ model = BertForMaskedLM.from_pretrained('YOUR PATH HERE').to(device)
 
 model.eval()
 
-with open('dataset_files/errors_split_1.json', 'r') as file:
+with open('../dataset_files/errors_split_1.json', 'r') as file:
     combined_reports1 = json.load(file)
-with open('dataset_files/errors_split_5.json', 'r') as file:
+with open('../dataset_files/errors_split_5.json', 'r') as file:
     combined_reports5 = json.load(file)
-with open('dataset_files/random_assumed_true_negatives.json', 'r') as file:
+with open('../dataset_files/random_assumed_true_negatives.json', 'r') as file:
     true_negatives = json.load(file)
 
 labels = []
@@ -26,14 +26,15 @@ ccrs = []
 for ind, rep in enumerate(combined_reports1 + combined_reports5 + true_negatives):
     if rep['Label'] == 'GOOD FLAG.':
         labels.append(1)
-        ccrs.append(calculate_PLLR(rep['Text'], rep['Single Index'], model, tokenizer))
+        ccrs.append(calculate_PLLR(rep['Text'], rep['Word Index in Text'], model, tokenizer))
         print(f"ind: {ind}, label: {labels[-1]}, ccr: {ccrs[-1]}")
     elif rep['Label'] == 'BAD.':
         labels.append(0)
-        ccrs.append(calculate_PLLR(rep['Text'], rep['Single Index'], model, tokenizer))
+        ccrs.append(calculate_PLLR(rep['Text'], rep['Word Index in Text'], model, tokenizer))
         print(f"ind: {ind}, label: {labels[-1]}, ccr: {ccrs[-1]}")
 print(labels)
 print(ccrs)
+# If your AUROC is less than 0.5, then just do 1 - labels :) For metrics a low score indicates an error, for other metrics it's a high score
 print("ROC:", roc(labels, ccrs))
 
 ## Note that there are 763 examples which are either 'GOOD FLAG.' or 'BAD.'
