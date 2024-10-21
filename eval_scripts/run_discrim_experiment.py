@@ -1,4 +1,4 @@
-from util.electra_utils import get_prob_for_word
+from util.discrim_utils import get_prob_for_word
 import json
 import torch
 from transformers import ElectraTokenizer, ElectraForPreTraining
