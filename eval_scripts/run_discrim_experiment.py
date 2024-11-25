@@ -41,7 +41,7 @@ for ind, rep in enumerate(combined_reports1 + combined_reports5 + true_negatives
 print(labels)
 print(probs)
 
-# If your AUROC is less than 0.5, then just do 1 - labels :) For metrics a low score indicates an error, for other metrics it's a high score
+# If your AUROC is less than 0.5, then just do 1 - labels :) For some metrics a low score indicates an error, for other metrics it's a high score
 print("ROC AUC:", roc(labels, probs))
 
 ## Note that there are 763 examples which are either 'GOOD FLAG.' or 'BAD.'
