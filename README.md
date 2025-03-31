@@ -1,6 +1,6 @@
 # An Annotated Dataset of Errors in Premodern Greek and Baselines for Detecting Them
 
-This repository contains the data and code used for the paper "An Annotated Dataset of Errors in Premodern Greek and Baselines for Detecting Them". The dataset and baselines provided here are designed to accelerate the discovery of real errors in premodern texts using machine learning methods.
+This repository contains the data and code used for the paper **"An Annotated Dataset of Errors in Premodern Greek and Baselines for Detecting Them"**, accepted to the **Findings of NAACL 2025**. The dataset and baselines provided here are designed to accelerate the discovery of real errors in premodern texts using machine learning methods.
 
 ## Dataset Files
 
@@ -40,5 +40,15 @@ The **Label** key can have one of the following values:
 - **BAD DATA.** This indicates that the error resulted from issues in the authors' data assembling, cleaning, or standardization.
 - **EDITORIAL.** This indicates that the flagged issue is not a problem with the text, but a situation where different editorial decisions (such as punctuation or spacing) can be valid.
 
+## Citation
 
+If you use our work, please cite:
+
+```bibtex
+@article{brooks2024annotated,
+  title={An Annotated Dataset of Errors in Premodern Greek and Baselines for Detecting Them},
+  author={Brooks, Creston and Haubold, Johannes and Cowen-Breen, Charlie and White, Jay and DeVaul, Desmond and Riemenschneider, Frederick and Narasimhan, Karthik and Graziosi, Barbara},
+  journal={arXiv preprint arXiv:2410.11071},
+  year={2024}
+}
 
